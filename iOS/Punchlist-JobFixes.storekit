@@ -1,0 +1,42 @@
+{
+  "identifier": "punchlist",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_askToBuyEnabled": false
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500001",
+      "localizations": [],
+      "name": "Punchlist - Job Fixes Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "2.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "punchlist_pro_monthly",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Client sign-off signature capture and PDF export",
+              "displayName": "Punchlist - Job Fixes Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "punchlist_pro_monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Punchlist - Job Fixes Pro Monthly",
+          "subscriptionGroupID": "21500001",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

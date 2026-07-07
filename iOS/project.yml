@@ -1,0 +1,75 @@
+name: Punchlist-JobFixes
+options:
+  bundleIdPrefix: com.shimondeitel.punchlistfx
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Punchlist-JobFixes:
+    type: application
+    platform: iOS
+    sources:
+      - path: Punchlist-JobFixes
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.punchlistfx
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Punchlist-JobFixes/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  Punchlist-JobFixesTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Punchlist-JobFixesTests
+      - path: Punchlist-JobFixes.storekit
+    dependencies:
+      - target: Punchlist-JobFixes
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.punchlistfx.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  Punchlist-JobFixesUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Punchlist-JobFixesUITests
+    dependencies:
+      - target: Punchlist-JobFixes
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.punchlistfx.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Punchlist-JobFixes:
+    build:
+      targets:
+        Punchlist-JobFixes: all
+        Punchlist-JobFixesTests: [test]
+        Punchlist-JobFixesUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Punchlist-JobFixes.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Punchlist-JobFixes.storekit
+      targets:
+        - Punchlist-JobFixesTests
+        - Punchlist-JobFixesUITests
+    archive:
+      config: Release
